@@ -1,9 +1,9 @@
 #pragma once
 
-#ifdef LINUX
+#ifdef __linux__
 	#include <unistd.h>
 #endif
-#ifdef WINDOWS
+#ifdef _WIN32
 	#include <windows.h>
 #endif
 

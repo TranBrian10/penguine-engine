@@ -4,10 +4,9 @@ Utilities::Utilities() {}
 
 void Utilities::doSleep(int ms)
 {
-	#ifdef LINUX
+	#ifdef __linux__
 		usleep(ms * 1000);
-	#endif
-	#ifdef WINDOWS
+	#elif _WIN32
 		Sleep(ms);
 	#endif
 }

@@ -50,6 +50,7 @@ void Rotate::managerDisplay(void)
 	// White square
 	glPushMatrix();
 	glTranslated(25, 0, 0);
+	glRectf(-25.0, -25.0, 25.0, 25.0);
 	glRotatef(S_ANGLE, 0.0, 0.0, 1.0);
 	glColor3f(1.0, 1.0, 1.0);
 	glRectf(-25.0, -25.0, 25.0, 25.0);
@@ -58,14 +59,15 @@ void Rotate::managerDisplay(void)
 	// Burgundy square
 	glPushMatrix();
 	glRotatef(S_ANGLE, 0.0, 0.0, -1.0);
-	glColor3f(0.7, 0.2, 0.3);
+	glTranslated(10, 0, 0);
+	glColor3f(0.7f, 0.2f, 0.3f);
 	glRectf(-10.0, -10.0, 10.0, 10.0);
 	glPopMatrix();
 
 	// Green square
 	glPushMatrix();
 	glRotatef(S_ANGLE, 0.0, 0.0, 0.0);
-	glColor3f(0.7, 1.0, 0.3);
+	glColor3f(0.7f, 1.0, 0.3f);
 	glRectf(-5.0, -5.0, 5.0, 5.0);
 	glPopMatrix();
 
@@ -78,7 +80,7 @@ For Windows, replace usleep() by Sleep().
 */
 void Rotate::managerIdle(void)
 {
-	Utilities::doSleep(5.0); // change it to  Sleep(5.0); for Windows
+	Utilities::doSleep(5);
 	S_ANGLE -= 1;
 	glutPostRedisplay();
 }
